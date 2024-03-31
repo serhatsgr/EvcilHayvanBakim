@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+
+    tools:context=".evcilHayvanSecim">
+
+
+    <TextView
+        android:id="@+id/hosgeldiniz"
+        android:layout_width="362dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:text="HOŞGELDİNİZ "
+        android:textColor="#D3E2E4"
+        android:textSize="35dp"
+        android:textStyle="bold|italic" />
+
+
+    <TextView
+        android:id="@+id/kullaniciAdi"
+        android:layout_width="362dp"
+        android:layout_height="57dp"
+        android:layout_below="@+id/hosgeldiniz"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-43dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:text="Serhat Sağır"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/secim"
+        android:layout_width="362dp"
+        android:layout_height="57dp"
+        android:layout_below="@+id/kullaniciAdi"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-9dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:text="Can dostunu seç"
+        android:textSize="25dp"
+        android:textStyle="normal|bold" />
+
+
+    <ImageButton
+        android:id="@+id/btnPet1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/hosgeldiniz"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/kopek"
+        android:src="@drawable/color"
+        android:onClick="hayvan"/>
+
+    <ImageButton
+        android:id="@+id/btnPet2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/hosgeldiniz"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/kedi"
+        android:src="@drawable/color" />
+
+    <ImageButton
+        android:id="@+id/btnPet3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/hosgeldiniz"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="220dp"
+        android:background="@drawable/kus"
+        android:src="@drawable/color" />
+
+    <Button
+        android:id="@+id/btnPet4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/hosgeldiniz"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="220dp"
+        android:backgroundTint="#673AB7"
+        android:text="Ekle"
+        android:textColor="@color/black" />
+
+</RelativeLayout>
