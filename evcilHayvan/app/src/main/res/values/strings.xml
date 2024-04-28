@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EvcilHayvanBakim</string>
+    <string name="open_name">Open Nagivation Driver</string>
+    <string name="close_name">Close Nagivation Driver</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>    
