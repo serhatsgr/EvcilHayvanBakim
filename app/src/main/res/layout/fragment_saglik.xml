@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+
+    <TextView
+        android:id="@+id/genel"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:text="SAĞLIK"
+        android:textSize="40dp"
+        android:textStyle="bold|italic"
+
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/cizgi1"
+        android:background="@android:color/black"
+        android:layout_marginTop="70dp"/>
+
+
+    <ImageView
+        android:id="@+id/imgPet"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/cizgi1"
+        android:layout_marginLeft="10dp"
+
+        android:layout_marginTop="1dp"
+        android:background="@drawable/kopek"
+        android:src="@drawable/color" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TURŞU"
+        android:textSize="20dp"
+        android:layout_below="@id/cizgi1"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="160dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/cizgi2"
+        android:background="@android:color/black"
+        android:layout_below="@id/imgPet"/>
+
+    <Button
+        android:id="@+id/asiBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cizgi2"
+        android:layout_marginTop="90dp"
+        android:onClick="asi"
+        android:text="AŞILAR" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ALINAN İLAÇLAR"
+        android:layout_below="@id/cizgi2"
+        android:layout_marginTop="135dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OPERASYONLAR"
+        android:layout_below="@id/cizgi2"
+        android:layout_marginTop="180dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ALERJİLER"
+        android:layout_below="@id/cizgi2"
+        android:layout_marginTop="225dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VETERİNER NOTLARI"
+        android:layout_below="@id/cizgi2"
+        android:layout_marginTop="270dp"/>
+
+</RelativeLayout>

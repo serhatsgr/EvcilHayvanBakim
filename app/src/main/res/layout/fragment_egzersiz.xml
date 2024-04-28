@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EgzersizFragment">
+
+    <TextView
+        android:id="@+id/genel"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:text="EGZERSİZLER"
+        android:textSize="40dp"
+        android:textStyle="bold|italic"
+
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/cizgi1"
+        android:background="@android:color/black"
+        android:layout_marginTop="70dp"/>
+
+
+    <ImageView
+        android:id="@+id/imgPet"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/cizgi1"
+        android:layout_marginLeft="10dp"
+
+        android:layout_marginTop="1dp"
+        android:background="@drawable/kopek"
+        android:src="@drawable/color" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TURŞU"
+        android:textSize="20dp"
+        android:layout_below="@id/cizgi1"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="160dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/cizgi2"
+        android:background="@android:color/black"
+        android:layout_below="@id/imgPet"/>
+
+
+
+        <EditText
+            android:id="@+id/etExerciseType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Egzersiz Türü"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/cizgi2"
+            />
+
+        <EditText
+            android:id="@+id/etExerciseDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Egzersiz Süresi (dk)"
+            android:layout_below="@id/etExerciseType"
+           />
+
+    <EditText
+        android:id="@+id/etExerciseDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Egzersiz Tarihi(Tıkla)"
+        android:layout_below="@id/etExerciseDuration"/>
+
+
+
+    <EditText
+        android:id="@+id/etExerciseTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Egzersiz Saati(Tıkla)"
+        android:layout_below="@+id/etExerciseDate"
+      />
+
+    <Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/etExerciseTime"
+    android:id="@+id/ekle"
+    android:text="Egzersizi Ekle"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gecmis"
+        android:layout_below="@id/ekle"
+        android:text="Egzersiz Geçmişi"/>
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/gecmis"
+        />
+
+
+
+
+
+
+
+</RelativeLayout>
