@@ -7,7 +7,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -16,11 +15,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class asiSayfa extends AppCompatActivity {
+public class vaccinesPage extends AppCompatActivity {
 
     private TextInputEditText etVaccineName, etVaccineDate;
     private Button btnAddVaccine;
@@ -40,7 +38,7 @@ public class asiSayfa extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_asi_sayfa);
+        setContentView(R.layout.activity_vaccines_page);
 
         etVaccineName=findViewById(R.id.etVaccineName);
         etVaccineDate=findViewById(R.id.etVaccineDate);
@@ -58,10 +56,10 @@ public class asiSayfa extends AppCompatActivity {
                date=String.valueOf(etVaccineDate.getText());
 
                if(TextUtils.isEmpty(vaccineName)){
-                   Toast.makeText(asiSayfa.this, "Egzersiz Türü Giriniz.", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(vaccinesPage.this, "Egzersiz Türü Giriniz.", Toast.LENGTH_SHORT).show();
                }
                if(TextUtils.isEmpty(date)){
-                   Toast.makeText(asiSayfa.this,"Aşı olma tarihini giriniz!",Toast.LENGTH_SHORT).show();
+                   Toast.makeText(vaccinesPage.this,"Aşı olma tarihini giriniz!",Toast.LENGTH_SHORT).show();
                }
 
                mUsers=mAuth.getCurrentUser();
@@ -73,7 +71,7 @@ public class asiSayfa extends AppCompatActivity {
                          .get()
                          .addOnSuccessListener(querySnapshots -> {
                            if (querySnapshots.size()>=30){
-                                Toast.makeText(asiSayfa.this,"Ekleme yapmadan önce bazı eski aşı kayıtlarını sil!",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(vaccinesPage.this,"Ekleme yapmadan önce bazı eski aşı kayıtlarını sil!",Toast.LENGTH_SHORT).show();
                            }
                            else{
                                mData=new HashMap<>();
@@ -83,24 +81,24 @@ public class asiSayfa extends AppCompatActivity {
                                mFireStore.collection("vaccines")
                                        .add(mData)
                                        .addOnSuccessListener(documentReference -> {
-                                           Toast.makeText(asiSayfa.this,"Aşı başarıyla kaydedildi.",Toast.LENGTH_SHORT).show();
+                                           Toast.makeText(vaccinesPage.this,"Aşı başarıyla kaydedildi.",Toast.LENGTH_SHORT).show();
 
                                        })
 
                                        .addOnFailureListener(e -> {
-                                           Toast.makeText(asiSayfa.this,"Aşı kaydedilemedi.",Toast.LENGTH_SHORT).show();
+                                           Toast.makeText(vaccinesPage.this,"Aşı kaydedilemedi.",Toast.LENGTH_SHORT).show();
                                        });
                            }
 
                           })
                          .addOnFailureListener(e -> {
-                             Toast.makeText(asiSayfa.this,"Aşı bilgileri alınırken hata oluştu.",Toast.LENGTH_SHORT).show();
+                             Toast.makeText(vaccinesPage.this,"Aşı bilgileri alınırken hata oluştu.",Toast.LENGTH_SHORT).show();
                          });
 
                }
 
                else {
-                   Toast.makeText(asiSayfa.this,"Kullanıcı oturumu açılmamış.",Toast.LENGTH_SHORT).show();
+                   Toast.makeText(vaccinesPage.this,"Kullanıcı oturumu açılmamış.",Toast.LENGTH_SHORT).show();
                }
             }
         });
