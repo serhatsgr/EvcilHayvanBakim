@@ -1,5 +1,6 @@
 package com.serhatsgr.evcilhayvanbakim;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -31,11 +32,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class egzersizFragment extends Fragment {
+public class exerciseFragment extends Fragment {
 
      TextInputEditText etExerciseType,etExerciseDuration,etExerciseDate,etExerciseTime;
 
-     Button btn;
+     Button btn,btnH;
 
 
 
@@ -57,7 +58,7 @@ public class egzersizFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-        View view = inflater.inflate(R.layout.fragment_egzersiz, container, false);
+        View view = inflater.inflate(R.layout.fragment_exercise, container, false);
 
 
         PieChart pieChart = view.findViewById(R.id.pieChart);
@@ -68,6 +69,7 @@ public class egzersizFragment extends Fragment {
         etExerciseDate = view.findViewById(R.id.etExerciseDate);
         etExerciseTime = view.findViewById(R.id.etExerciseTime);
         btn= view.findViewById(R.id.btnadd);
+        btnH=view.findViewById(R.id.btnHistory);
 
         mAuth=FirebaseAuth.getInstance();
         mFireStore=FirebaseFirestore.getInstance();
@@ -116,28 +118,49 @@ public class egzersizFragment extends Fragment {
                 if (mUsers != null) {
                     String userId = mUsers.getUid();
 
-                    mData = new HashMap<>();
-                    mData.put("type", type);
-                    mData.put("duration", duration);
-                    mData.put("date", date);
-                    mData.put("time", time);
-                    mData.put("userId", userId);
-
                     mFireStore.collection("exercise")
-                            .add(mData)
-                            .addOnSuccessListener(documentReference -> {
-                                Toast.makeText(getActivity(), "Egzersiz bilgisi kaydedildi.", Toast.LENGTH_SHORT).show();
+                            .whereEqualTo("userId", userId)
+                            .get()
+                            .addOnSuccessListener(querySnapshot -> {
+                                if (querySnapshot.size() >= 20) {
+                                    Toast.makeText(getActivity(), "Egzersiz Eklenemedi. Egzersiz Geçmişini Temizle!.", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    mData = new HashMap<>();
+                                    mData.put("type", type);
+                                    mData.put("duration", duration);
+                                    mData.put("date", date);
+                                    mData.put("time", time);
+                                    mData.put("userId", userId);
+
+                                    mFireStore.collection("exercise")
+                                            .add(mData)
+                                            .addOnSuccessListener(documentReference -> {
+                                                Toast.makeText(getActivity(), "Egzersiz bilgisi kaydedildi.", Toast.LENGTH_SHORT).show();
+                                            })
+                                            .addOnFailureListener(e -> {
+                                                Toast.makeText(getActivity(), "Egzersiz bilgisi kaydedilirken bir hata oluştu.", Toast.LENGTH_SHORT).show();
+                                            });
+                                }
                             })
                             .addOnFailureListener(e -> {
-                                Toast.makeText(getActivity(), "Egzersiz bilgisi kaydedilirken bir hata oluştu.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "Egzersiz bilgileri alınırken bir hata oluştu.", Toast.LENGTH_SHORT).show();
                             });
-                            } else {
-                                Toast.makeText(getActivity(), "Kullanıcı oturumu açılmamış.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getActivity(), "Kullanıcı oturumu açılmamış.", Toast.LENGTH_SHORT).show();
                 }
             }
+
         });
 
 
+
+        btnH.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), exerciseHistory.class);
+                startActivity(intent);
+            }
+        });
 
 
         etExerciseDate.setOnClickListener(new View.OnClickListener() {
