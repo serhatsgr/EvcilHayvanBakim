@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editTextMedicationName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="İlaç Adı" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editTextUsageReason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kullanım Nedeni" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editTextFrequency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Günde Kaç Kez Kullanılacak" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editTextStartDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Başlangıç Tarihi (YYYY-AA-GG)" />
+
+    <!-- Kullanım Süresi -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editTextDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kullanım Süresi" />
+
+    <!-- Devam Etmek İstiyorsa Checkbox -->
+    <CheckBox
+        android:id="@+id/checkBoxContinuation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hala kullanılıyor" />
+
+    <!-- İlaç Ekle Butonu -->
+    <Button
+        android:id="@+id/buttonAddMedication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="İlaç Ekle" />
+
+    <!-- İlaç Listesi -->
+    <ListView
+        android:id="@+id/listViewMedications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
