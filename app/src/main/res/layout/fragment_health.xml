@@ -36,7 +36,7 @@
 
         android:layout_marginTop="1dp"
         android:background="@drawable/kopek"
-        android:src="@drawable/color" />
+         />
 
     <TextView
         android:layout_width="wrap_content"
@@ -64,23 +64,19 @@
         android:text="AŞILAR" />
 
     <Button
+        android:id="@+id/addMedication"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ALINAN İLAÇLAR"
         android:layout_below="@id/cizgi2"
         android:layout_marginTop="135dp"/>
+
     <Button
+        android:id="@+id/btnAllergy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OPERASYONLAR"
-        android:layout_below="@id/cizgi2"
-        android:layout_marginTop="180dp"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ALERJİLER"
-        android:layout_below="@id/cizgi2"
-        android:layout_marginTop="225dp"/>
+        android:layout_below="@id/addMedication"
+        android:text="ALERJİLER" />
 
     <Button
         android:layout_width="match_parent"

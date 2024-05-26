@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EgzersizFragment">
+    tools:context=".exerciseFragment">
 
     <TextView
         android:id="@+id/genel"
@@ -34,7 +34,7 @@
 
         android:layout_marginTop="1dp"
         android:background="@drawable/kopek"
-        android:src="@drawable/color" />
+         />
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
 
 
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etExerciseType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
             android:layout_below="@id/cizgi2"
             />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etExerciseDuration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,43 +71,43 @@
             android:layout_below="@id/etExerciseType"
            />
 
-    <EditText
-        android:id="@+id/etExerciseDate"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etExerciseDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Egzersiz Tarihi(Tıkla)"
+            android:layout_below="@id/etExerciseDuration"/>
+
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etExerciseTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Egzersiz Saati(Tıkla)"
+            android:layout_below="@+id/etExerciseDate"
+          />
+
+        <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Egzersiz Tarihi(Tıkla)"
-        android:layout_below="@id/etExerciseDuration"/>
+        android:layout_below="@id/etExerciseTime"
+        android:id="@+id/btnadd"
+        android:text="Egzersizi Ekle"/>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnHistory"
+            android:layout_below="@id/btnadd"
+            android:text="Egzersiz Geçmişi"/>
 
-
-    <EditText
-        android:id="@+id/etExerciseTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Egzersiz Saati(Tıkla)"
-        android:layout_below="@+id/etExerciseDate"
-      />
-
-    <Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/etExerciseTime"
-    android:id="@+id/ekle"
-    android:text="Egzersizi Ekle"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/gecmis"
-        android:layout_below="@id/ekle"
-        android:text="Egzersiz Geçmişi"/>
-
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/pieChart"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/gecmis"
-        />
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/btnHistory"
+            />
 
 
 

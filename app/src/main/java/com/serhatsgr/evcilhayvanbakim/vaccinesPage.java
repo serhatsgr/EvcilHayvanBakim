@@ -47,6 +47,7 @@ public class vaccinesPage extends AppCompatActivity {
         mFirestore = FirebaseFirestore.getInstance();
 
         vaccineIds = new ArrayList<>();
+
         loadVaccineHistory();
 
         btnAddVaccine.setOnClickListener(v -> addVaccine());
@@ -104,7 +105,7 @@ public class vaccinesPage extends AppCompatActivity {
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     List<String> vaccineList = new ArrayList<>();
-                    vaccineIds.clear(); // Clear before adding new data
+                    vaccineIds.clear();
                     for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                         String vaccineId = documentSnapshot.getId();
                         vaccineIds.add(vaccineId);

@@ -1,15 +1,12 @@
 package com.serhatsgr.evcilhayvanbakim;
 
-import androidx.activity.ComponentActivity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.Gravity;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +20,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
-import java.util.Objects;
 
 public class register extends AppCompatActivity {
 
@@ -129,10 +125,6 @@ public class register extends AppCompatActivity {
             }
         });
 
-        WindowManager.LayoutParams params = getWindow().getAttributes();
-        params.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
-        params.y = 200; // Y ekseninde kaydırma miktarı
-        getWindow().setAttributes(params);
     }
 
 

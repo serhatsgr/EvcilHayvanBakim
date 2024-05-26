@@ -122,7 +122,7 @@ public class exerciseFragment extends Fragment {
                             .whereEqualTo("userId", userId)
                             .get()
                             .addOnSuccessListener(querySnapshot -> {
-                                if (querySnapshot.size() >= 20) {
+                                if (querySnapshot.size() >= 20  ) {
                                     Toast.makeText(getActivity(), "Egzersiz Eklenemedi. Egzersiz Geçmişini Temizle!.", Toast.LENGTH_SHORT).show();
                                 } else {
                                     mData = new HashMap<>();
@@ -140,6 +140,7 @@ public class exerciseFragment extends Fragment {
                                             .addOnFailureListener(e -> {
                                                 Toast.makeText(getActivity(), "Egzersiz bilgisi kaydedilirken bir hata oluştu.", Toast.LENGTH_SHORT).show();
                                             });
+
                                 }
                             })
                             .addOnFailureListener(e -> {

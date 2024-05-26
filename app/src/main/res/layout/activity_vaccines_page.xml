@@ -35,7 +35,7 @@
         android:text="Aşı Ekle" />
 
     <ListView
-        android:id="@+id/lvVaccines"
+        android:id="@+id/ListViewVaccines"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
